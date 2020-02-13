@@ -1,0 +1,198 @@
+body {
+    background: #542a0e;
+    height: 100vh;
+}
+.wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+.poker-table {
+    margin-top: 5%;
+    display: flex;
+    width:1000px;
+	height:400px;
+	background-color:#4aad4a;
+	border-radius:120px;
+	position:relative;
+    border:15px solid #a95555;
+    box-shadow: 
+    inset 7px 7px #2f6e2f,
+    inset -7px 7px #2f6e2f, 
+    inset 7px -7px #2f6e2f,
+    inset -7px -7px #2f6e2f,
+    -7px -7px #854242,
+    7px -7px #854242,
+    -7px 7px #854242,
+    7px 7px #854242;
+}
+.cardplace {
+    display: flex;
+    & > div:not(:last-child){
+        margin-right: 5px;
+    }
+    &--wrapper{ 
+        display: flex;
+        align-self: center;
+        margin: 0 auto;
+    }
+}
+.addcards {
+    align-self: center;
+    margin: 0 10px;
+    &--none{
+        display: none;
+    }
+}
+.player {
+    position: absolute;
+    &--empty{
+        display: none;
+    }
+    &--name{
+        pointer-events: none;
+        margin-bottom: 5px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+.player-1 { 
+    left: 0;
+    top: 50%;
+    transform: translate(10%, -50%);
+}
+.player-2 { 
+    left: 25%;
+    top: 0;
+    transform: translate(-40%, 10%);
+}
+.player-3 { 
+    right: 50%;
+    top: 0;
+    transform: translate(50%, 10%);
+}
+.player-4 { 
+    right: 25%;
+    top: 0;
+    transform: translate(40%, 10%);
+}
+.player-5 {
+    right: 0;
+    top: 50%;
+    transform: translate(-10%, -50%);
+}
+.player-6 {
+    right: 25%;
+    bottom: 0;
+    transform: translate(40%, -10%);
+}
+.player-7 {
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -10%);
+}
+.player-8 {
+    left: 25%;
+    bottom: 0;
+    transform: translate(-40%, -10%);
+}
+.addplayer{
+    &--exists {
+        display: none;
+    }
+}
+.btn {
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    padding: 5px;
+    transition: transform .5s ease;
+    cursor: pointer;
+    &:hover {
+        transform: scale(120%);
+    }
+}
+.cards{
+    display: flex;
+    & > div:not(:last-child){
+        margin-right: 5px;
+    }
+}
+.card{
+    height: 100px;
+    width: 70px;
+    border-radius: 5px;
+    position: relative;
+    &--h {
+        background: 
+        url('../img/heart.png') center / 50% no-repeat,
+        #fff;
+        color: red;
+    }
+    &--d {
+        background: 
+        url('../img/diamond.png') center / 50% no-repeat,
+        #fff;
+        color: red;
+    }
+    &--s {
+        background: 
+        url('../img/spade.png') center / 50% no-repeat,
+        #fff;
+        color: black;
+    }
+    &--c {
+        background: 
+        url('../img/club.png') center / 50% no-repeat,
+        #fff;
+        color: black;;
+    }
+    &--num{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        color: inherit;
+    }
+    &--num-inverted{
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+        transform: rotate(180deg);
+        color: inherit;
+    }
+}
+.reset {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+}
+.evaluator {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    &--name{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    &--cell {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+    }
+}
+.wins {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+}
+.results {
+    margin-top: 1em;
+    display: flex;
+    &--block {
+        width: 50%;
+        background: rgba(100,110,135,0.3);
+    }
+}
